@@ -709,6 +709,43 @@
 .social-icons-thanks span:hover {
     transform: scale(1.4) rotate(15deg);
 }
+		/* Rregullime për ekrane të vegjël (Celularë) */
+@media (max-width: 768px) {
+    /* Paneli kryesor i analizës */
+    #dashboard {
+        flex-direction: column !important; /* Vendos elementet shtyllë */
+        padding: 10px;
+    }
+
+    /* Kutitë e zeza (Origjina, Ekipi, Website) */
+    .stats-grid, .info-cards-container { 
+        grid-template-columns: 1fr !important; /* Vetëm 1 kolonë */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Kutitë vjollcë poshtë */
+    .purple-section {
+        flex-direction: column !important;
+    }
+
+    .purple-card {
+        width: 100% !important; /* Merr gjithë gjerësinë e ekranit */
+        margin-bottom: 10px;
+    }
+
+    /* Zvogëlo titullin që të mos dalë jashtë */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Fotoja e bimes që ngarkohet */
+    #preview-img {
+        max-width: 100% !important;
+        height: auto;
+    }
+}
 
 .footer-note {
     font-size: 0.9rem;
