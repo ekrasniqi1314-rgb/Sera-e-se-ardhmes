@@ -709,43 +709,6 @@
 .social-icons-thanks span:hover {
     transform: scale(1.4) rotate(15deg);
 }
-		/* Rregullime për ekrane të vegjël (Celularë) */
-@media (max-width: 768px) {
-    /* Paneli kryesor i analizës */
-    #dashboard {
-        flex-direction: column !important; /* Vendos elementet shtyllë */
-        padding: 10px;
-    }
-
-    /* Kutitë e zeza (Origjina, Ekipi, Website) */
-    .stats-grid, .info-cards-container { 
-        grid-template-columns: 1fr !important; /* Vetëm 1 kolonë */
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Kutitë vjollcë poshtë */
-    .purple-section {
-        flex-direction: column !important;
-    }
-
-    .purple-card {
-        width: 100% !important; /* Merr gjithë gjerësinë e ekranit */
-        margin-bottom: 10px;
-    }
-
-    /* Zvogëlo titullin që të mos dalë jashtë */
-    h1 {
-        font-size: 1.8rem !important;
-    }
-
-    /* Fotoja e bimes që ngarkohet */
-    #preview-img {
-        max-width: 100% !important;
-        height: auto;
-    }
-}
 
 .footer-note {
     font-size: 0.9rem;
@@ -754,7 +717,22 @@
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-    </style>
+/* Ky është kodi që rregullon celularin */
+    @media screen and (max-width: 768px) {
+        body { overflow-x: hidden !important; }
+        .dashboard, .container, .purple-section, .info-cards-container {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            padding: 5px !important;
+        }
+        .purple-card, .info-card, .stat-card {
+            width: 92% !important;
+            margin: 10px auto !important;
+        }
+        h1 { font-size: 1.5rem !important; text-align: center; }
+    }
+</style>
 </head>
 <body>
 
@@ -1261,6 +1239,7 @@
         r.readAsDataURL(f);
         r.onload = () => res(r.result.split(',')[1]);
     });
+   
 </script>
 </body>
 </html>
